@@ -1,4 +1,4 @@
-![Eddy](./eddy.png)
+![Eddy](https://raw.githubusercontent.com/agazinakou/eddy-ipsum/master/eddy.png)
 
 ## Eddy-ipsum
 

@@ -19,22 +19,25 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(paragraph);
 }
 
-function getRndInteger(min, max) {
+function getRndInteger(min: number, max: number) {
 	return Math.floor(Math.random() * (max - min) ) + min;
 }
 
 function generateLine() {
 	var text = json['sentences_1'][getRndInteger(0, 20)] + ' ' + json['sentences_2'][getRndInteger(0, 23)] + '.';
 	console.log(text);
-	var editor = vscode.window.activeTextEditor;
-	editor.edit(
-	  edit => editor.selections.forEach(
-		selection => {
-		  edit.delete(selection);
-		  edit.insert(selection.start, text);
-		}
-	  )
-	);
+	var editor : any;
+	editor = vscode.window.activeTextEditor;
+	if(editor != undefined){
+		editor.edit(
+			(edit : any) => editor.selections.forEach(
+			  (selection: any) => {
+				edit.delete(selection);
+				edit.insert(selection.start, text);
+			  }
+			)
+		);
+	}
 }
 
 function line(){
@@ -51,15 +54,18 @@ function generateParagraph() {
 	for (let i = 2; i <= 10; i++) {
 	  	text = text + line();
 	}
-	var editor = vscode.window.activeTextEditor;
-	editor.edit(
-	  edit => editor.selections.forEach(
-		selection => {
-		  edit.delete(selection);
-		  edit.insert(selection.start, text);
-		}
-	  )
-	);
+	var editor : any;
+	editor = vscode.window.activeTextEditor;
+	if(editor != undefined){
+		editor.edit(
+			(edit : any) => editor.selections.forEach(
+			  (selection: any) => {
+				edit.delete(selection);
+				edit.insert(selection.start, text);
+			  }
+			)
+		);
+	}
 }
 
 // this method is called when your extension is deactivated

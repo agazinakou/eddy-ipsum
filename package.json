@@ -1,12 +1,19 @@
 {
 	"name": "eddy-ipsum",
+	"publisher": "azinakou",
 	"displayName": "eddy-ipsum",
 	"description": "Your fake text with EddyIpsum",
 	"version": "0.0.1",
+	"icon": "eddy.png",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/agazinakou/eddy-ipsum.git"
+	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
 	"activationEvents": [
@@ -46,5 +53,8 @@
 		"mocha": "^7.0.1",
 		"typescript": "^3.7.5",
 		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"npm": "^6.14.11"
 	}
 }
